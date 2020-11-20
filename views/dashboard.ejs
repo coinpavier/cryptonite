@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="title icon" href="images/title-img.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/dashboard.css">
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light mb-0">
+      <div class="navbar-toggler mr-auto mb-2 text-white" >
+        <a class="text-white" href="/invest"></a><i class="fab fa-bitcoin fa-2x mx-3 text-white"></i>Coin Analytica</a>
+      </div>
+      <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- sidebar -->
+            <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+              <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">
+                <div class="aa"> <i class="fab fa-bitcoin fa-2x "></i>Coin Analytica</a> </div>
+              </a>
+              <div class="bottom-border pb-3 namer">
+                <img src="/profile.png" width="50" class="rounded-circle mr-3">
+                <h4><a href="#" class="text-white"><%= user.fisrt_name.toUpperCase() + " " + user.last_name.toUpperCase() %> </a></h4>
+              </div>
+              <ul class="navbar-nav flex-column mt-4">
+                <li class="nav-item"><a href="/dashboard" class="nav-link text-white p-3 mb-2 current "><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
+                <li class="nav-item"><a href="/invest" class="nav-link text-white p-3 mb-2 sidebar-link "><i class="fas fa-piggy-bank text-light fa-lg mr-3"></i>Invest</a></li>
+                <li class="nav-item"><a href="/withdrawal" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-money-bill-alt text-light fa-lg mr-3"></i>withdraw</a></li>
+                <li class="nav-item"><a href="/profile" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Profile</a></li>
+                <li class="nav-item"><a href="/settings" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
+              </ul>
+            </div>
+            <!-- end of sidebar -->
+
+            <!-- top-nav -->
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto fn fixed-top py-2 top-navbar">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <h4 class="text-light text-uppercase mb-0">DASHBOARD</h4>
+                </div>
+                <div class="col-md-5">
+                  <form>
+                  </form>
+                </div>
+                <div class="col-md-3">
+                  <ul class="navbar-nav">
+                    <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-white fa-lg"></i></a></li>
+                    <li class="nav-item ml-md-auto"><a href="/users/notification" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- end of top-nav -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- modal -->
+    <div class="modal fade" id="sign-out">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Want to leave?</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            Press logout to leave
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+            <a href="/users/logout" class="btn btn-danger">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+     <!-- cards -->
+     <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row pt-md-5 mt-md-3 mb-5">
+              <div class="col-xl-3 col-sm-6 p-2">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-piggy-bank fa-3x text-warning"></i>
+                      <div class="text-right text-secondary">
+                        <h4 class="text-primary">Deposits</h4>
+                        <h5>$<%= user.availbalance %> </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>refresh</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 p-2">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-money-bill-alt fa-3x text-success"></i>
+                      <div class="text-right text-secondary">
+                        <h4 class="text-primary">withdraws</h4>
+                        <h5>$<%= user.withdrawals %></h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>refresh</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 p-2">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas fa-chart-line fa-3x text-info"></i>
+                      <div class="text-right text-secondary">
+                        <h4 class="text-primary">plan type</h4>
+                        <h5> <%= user.plantype %> </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>refresh</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 p-2">
+                <div class="card card-common">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <i class="fas  fa-users fa-3x text-info"></i>
+                      <div class="text-right text-secondary">
+                        <h4 class="text-primary">referals bonus</h4>
+                        <h5>$<%= user.refaralsbonus %></h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-secondary">
+                    <i class="fas fa-sync mr-3"></i>
+                    <span>refresh</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     <!-- Smartsupp Live Chat script -->
+<!-- <script type="text/javascript">
+  var _smartsupp = _smartsupp || {};
+  _smartsupp.key = '02bfa63594e91ada1ce8c37ef7691b351b169dba';
+  window.smartsupp||(function(d) {
+    var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+    c.type='text/javascript';c.charset='utf-8';c.async=true;
+    c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+  })(document);
+  </script> -->
+  <!-- end of smartsupp Live Chat  -->
+    <!-- end of cards -->
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+<script>
+  window.__lc = window.__lc || {};
+  window.__lc.license = 12188799;
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechatinc.com/chat-with/12188799/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
