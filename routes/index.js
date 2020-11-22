@@ -8,6 +8,8 @@ router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
 // Contact
 router.get('/contact', forwardAuthenticated, (req, res) => res.render('contact'));
 
+//about
+router.get('/about', forwardAuthenticated, (req, res) => res.render('about'));
 // FAQ
 
 router.get('/help', forwardAuthenticated, (req, res) => res.render('faq'));
