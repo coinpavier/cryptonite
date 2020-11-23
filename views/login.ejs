@@ -1,0 +1,197 @@
+<!-- <div class="container-fluid p-0">
+<header>
+  <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">
+        <i class="fab fa-bitcoin fa-2x mx-3"></i>cryptonite</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-align-right text-light"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mr-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">HOME
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">ABOUT US</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/help">FAQ
+            </a>
+        </li>
+          <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a href="/dashboard" class="nav-link">PLANS</a>
+              <div class="dropdown-content">
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/login">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/register">REGISTER</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</header>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+      <% include ./partials/messages %>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="lead mt-4">
+        No Account? <a href="/users/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - cryptonite</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <link rel="stylesheet" href="../css/metisMenu.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/default-css.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- modernizr css -->
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area">
+        <div class="container">
+          <div class="navbar-brand" style="margin: 10px;">
+            <span class="navbar-logo">
+                <a href="/">
+                    <img src="../../assets/images/logo.png" alt="" style="height: 3rem; " >
+                </a>
+            </span>
+            <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="/" style="text-decoration: none; color: black;">Cryptonite</a></span>
+            
+        </div>
+            <div class="login-box ptb--100">
+                <form action="/users/login" method="POST">
+                    <div class="login-form-head">
+                     
+                    <h4>Sign In</h4>
+                    <p>Hello there, Sign in and start managing your Investment Portfolio </p>
+                    </div>
+
+                    <div class="login-form-body">
+                      <br>
+                      <br> <% include ./partials/messages %> <br><br>
+                        <div class="form-gp">
+                            <label for="exampleInputEmail">Email address</label>
+                            <input type="email" id="exampleInputEmail" name="email">
+                            <i class="ti-email"></i>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword">Password</label>
+                            <input type="password" id="exampleInputPassword" name="password">
+                            <i class="ti-lock"></i>
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                </div>
+                            </div>
+                            <!-- <div class="col-6 text-right">
+                                <a href="#">Forgot Password?</a>
+                            </div> -->
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Log In <i class="ti-arrow-right"></i></button>
+                            <!-- <div class="login-other row mt-4">
+                                <div class="col-6">
+                                    <a class="fb-login" href="#">Log in with <i class="fa fa-facebook"></i></a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="google-login" href="#">Log in with <i class="fa fa-google"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a href="/users/register/">Sign up</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+
+    <!-- jquery latest version -->
+    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/metisMenu.min.js"></script>
+    <script src="../js/jquery.slimscroll.min.js"></script>
+    <script src="../js/jquery.slicknav.min.js"></script>
+    
+    <!-- others plugins -->
+    <script src="../js/plugins.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>
