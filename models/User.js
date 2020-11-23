@@ -13,7 +13,7 @@ fisrt_name: {
     type: String,
     required: true
   },
-  bitcoin_address: {
+  wallet: {
     type: String,
     required: true
   },
@@ -25,7 +25,7 @@ fisrt_name: {
     type: String,
     required: true
   },
-  usedcode:{
+  code:{
     type: String,
     
   },

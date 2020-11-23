@@ -16,11 +16,11 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 // Register
 router.post('/register', (req, res) => {
-  const { fisrt_name, last_name, email, password, password2, usedcode, bitcoin_address,} = req.body;
+  const { fisrt_name, last_name, email, password, password2, code, wallet,} = req.body;
   let errors = [];
   const referalcode = fisrt_name + Math.floor(Math.random() * 76876559);
 
-  if (!fisrt_name || !last_name|| !email || !password || !password2  || !bitcoin_address) {
+  if (!fisrt_name || !last_name|| !email || !password || !password2  || !wallet) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -40,7 +40,7 @@ router.post('/register', (req, res) => {
       email,
       password,
       password2,
-      bitcoin_address
+      wallet
     });
   } else {
     User.findOne({ email: email }).then(user => {
@@ -53,9 +53,9 @@ router.post('/register', (req, res) => {
           email,
           password,
           password2,
-          usedcode,
+          code,
           referalcode,
-          bitcoin_address
+          wallet
         });
       } else {
         const newUser = new User({
@@ -64,9 +64,9 @@ router.post('/register', (req, res) => {
           email,
           password,
           password2,
-          usedcode,
+          code,
           referalcode,
-          bitcoin_address
+          wallet
         });
 
         
