@@ -41,6 +41,17 @@ router.get('/invest', ensureAuthenticated, (req, res) =>
   })
 );
 
+router.get('/return-on-investments', ensureAuthenticated, (req, res) =>
+  res.render('returns', {
+    user: req.user
+  })
+);
+
+router.get('/history', ensureAuthenticated, (req, res) =>
+  res.render('history', {
+    user: req.user
+  })
+);
 router.get('/withdrawal', ensureAuthenticated, (req, res) =>
   res.render('withdrawal', {
     user: req.user
