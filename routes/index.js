@@ -23,6 +23,12 @@ router.get('/privacy-policy', forwardAuthenticated, (req, res) => res.render('pr
 //REFUND POLICY
 router.get('/refund-policy', forwardAuthenticated, (req, res) => res.render('refund'));
 
+//What is Tron
+router.get('/what-is-tron', forwardAuthenticated, (req, res) => res.render("tron"));
+
+
+//How to buy Tron
+router.get('/how-to-buy-tron', forwardAuthenticated, (req, res) => res.render('BuyTron'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
