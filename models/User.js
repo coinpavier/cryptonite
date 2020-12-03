@@ -31,7 +31,7 @@ fisrt_name: {
   },
   availbalance:{
     type: String,
-    default: '09.06'
+    default: '00.00'
   },
   withdrawals:{
     type: String,
