@@ -14,6 +14,13 @@ router.get('/about', forwardAuthenticated, (req, res) => res.render('about'));
 
 router.get('/help', forwardAuthenticated, (req, res) => res.render('faq'));
 
+//giveaway
+
+router.get('/weekly-giveaway', forwardAuthenticated, (req, res) => res.render('weekly'));
+
+router.get('/monthly-giveaway', forwardAuthenticated, (req, res) => res.render('monthly'));
+
+
 // TERMS
 router.get('/terms-and-condition', forwardAuthenticated, (req, res) => res.render('terms'));
 
