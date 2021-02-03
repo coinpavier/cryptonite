@@ -13,10 +13,6 @@ fisrt_name: {
     type: String,
     required: true
   },
-  wallet: {
-    type: String,
-    required: true
-  },
   password: {
     type: String,
     required: true

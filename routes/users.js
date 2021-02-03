@@ -16,11 +16,11 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 // Register
 router.post('/register', (req, res) => {
-  const { fisrt_name, last_name, email, password, password2, code, wallet,} = req.body;
+  const { fisrt_name, last_name, email, password, password2, code,} = req.body;
   let errors = [];
   const referalcode = fisrt_name + Math.floor(Math.random() * 76876559);
 
-  if (!fisrt_name || !last_name|| !email || !password || !password2  || !wallet) {
+  if (!fisrt_name || !last_name|| !email || !password || !password2 ) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -39,8 +39,7 @@ router.post('/register', (req, res) => {
       last_name,
       email,
       password,
-      password2,
-      wallet
+      password2
     });
   } else {
     User.findOne({ email: email }).then(user => {
@@ -54,8 +53,7 @@ router.post('/register', (req, res) => {
           password,
           password2,
           code,
-          referalcode,
-          wallet
+          referalcode
         });
       } else {
         const newUser = new User({
@@ -65,8 +63,7 @@ router.post('/register', (req, res) => {
           password,
           password2,
           code,
-          referalcode,
-          wallet
+          referalcode
         });
 
         
@@ -1155,7 +1152,7 @@ router.post('/register', (req, res) => {
                     console.log('Message sent: %s', info.messageId);   
                     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
                 });
-                res.redirect('/users/login/');
+                res.redirect('/users/login');
               })
               .catch(err => console.log(err));
           });
@@ -1169,7 +1166,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/dashboard',
-    failureRedirect: '/users/login/',
+    failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);
 });
@@ -1178,7 +1175,7 @@ router.post('/login', (req, res, next) => {
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You are logged out');
-  res.redirect('/users/login/');
+  res.redirect('/users/login');
 });
 
 module.exports = router;
