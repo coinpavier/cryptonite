@@ -22,7 +22,7 @@ router.get('/monthly-giveaway', forwardAuthenticated, (req, res) => res.render('
 
 
 // TERMS
-router.get('/terms-and-condition', forwardAuthenticated, (req, res) => res.render('terms'));
+router.get('/term-and-condition', forwardAuthenticated, (req, res) => res.render('terms'));
 
 //PRIVACY POLICY
 router.get('/privacy-policy', forwardAuthenticated, (req, res) => res.render('privacy'));
