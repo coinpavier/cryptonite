@@ -21,6 +21,20 @@ router.get('/weekly-giveaway', forwardAuthenticated, (req, res) => res.render('w
 router.get('/monthly-giveaway', forwardAuthenticated, (req, res) => res.render('monthly'));
 
 
+//coins
+router.get('/bitcoin', forwardAuthenticated, (req, res) => res.render('bitcoin'));
+
+router.get('/ethereum', forwardAuthenticated, (req, res) => res.render('ethereum'));
+
+router.get('/tron', forwardAuthenticated, (req, res) => res.render('tron'));
+
+router.get('/ripple', forwardAuthenticated, (req, res) => res.render('ripple'));
+
+router.get('/litecoin', forwardAuthenticated, (req, res) => res.render('litecoin'));
+
+router.get('/binance', forwardAuthenticated, (req, res) => res.render('binance'));
+
+
 // TERMS
 router.get('/term-and-condition', forwardAuthenticated, (req, res) => res.render('terms'));
 
