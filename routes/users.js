@@ -6,7 +6,7 @@ const passport = require('passport');
 const nodemailer = require('nodemailer');
 // Load User model
 const User = require('../models/User');
-// const fisrtMail = require('../firstmail.html')
+// const firstMail = require('../firstmail.html')
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
@@ -16,11 +16,11 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 // Register
 router.post('/register', (req, res) => {
-  const { fisrt_name, last_name, email, password, password2, code,} = req.body;
+  const { first_name, last_name, email, password, password2, code, wallet,} = req.body;
   let errors = [];
-  const referalcode = fisrt_name + Math.floor(Math.random() * 76876559);
+  const referalcode = first_name + Math.floor(Math.random() * 76876559);
 
-  if (!fisrt_name || !last_name|| !email || !password || !password2 ) {
+  if (!first_name || !last_name|| !email || !password || !password2  || !wallet) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -35,11 +35,12 @@ router.post('/register', (req, res) => {
   if (errors.length > 0) {
     res.render('register', {
       errors,
-      fisrt_name,
+      first_name,
       last_name,
       email,
       password,
-      password2
+      password2,
+      wallet
     });
   } else {
     User.findOne({ email: email }).then(user => {
@@ -47,23 +48,25 @@ router.post('/register', (req, res) => {
         errors.push({ msg: 'Email already exists' });
         res.render('register', {
           errors,
-          fisrt_name,
+          first_name,
           last_name,
           email,
           password,
           password2,
           code,
-          referalcode
+          referalcode,
+          wallet
         });
       } else {
         const newUser = new User({
-          fisrt_name,
+          first_name,
           last_name,
           email,
           password,
           password2,
           code,
-          referalcode
+          referalcode,
+          wallet
         });
 
         
@@ -367,7 +370,7 @@ router.post('/register', (req, res) => {
                     <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 40px; padding-left: 40px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
                     <div style="color:#191919;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.5;padding-top:10px;padding-right:40px;padding-bottom:10px;padding-left:40px;">
                     <div style="line-height: 1.5; font-size: 12px; color: #191919; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px;">
-                    <p style="font-size: 16px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 24px; margin: 0;"><strong><span style="font-size: 38px;">${fisrt_name} ${last_name} </span></strong></p>
+                    <p style="font-size: 16px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 24px; margin: 0;"><strong><span style="font-size: 38px;">${first_name} ${last_name} </span></strong></p>
                     <p style="font-size: 16px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 24px; margin: 0;"><strong><span style="font-size: 38px;">welcome to Coin Analytica!</span></strong></p>
                     </div>
                     </div>
@@ -1152,7 +1155,7 @@ router.post('/register', (req, res) => {
                     console.log('Message sent: %s', info.messageId);   
                     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
                 });
-                res.redirect('/users/login');
+                res.redirect('/users/login/');
               })
               .catch(err => console.log(err));
           });
@@ -1166,7 +1169,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/dashboard',
-    failureRedirect: '/users/login',
+    failureRedirect: '/users/login/',
     failureFlash: true
   })(req, res, next);
 });
@@ -1175,7 +1178,7 @@ router.post('/login', (req, res, next) => {
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You are logged out');
-  res.redirect('/users/login');
+  res.redirect('/users/login/');
 });
 
 module.exports = router;
