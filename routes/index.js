@@ -73,6 +73,13 @@ router.get('/select-coin-19843667164', ensureAuthenticated, (req, res) =>
   })
 );
 
+
+router.get('/special-paycoin19843667164', ensureAuthenticated, (req, res) =>
+  res.render('special', {
+    user: req.user
+  })
+);
+
 router.get('/return-on-investments', ensureAuthenticated, (req, res) =>
   res.render('returns', {
     user: req.user
