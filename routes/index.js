@@ -114,6 +114,13 @@ router.get('/binance-pay', ensureAuthenticated, (req, res) =>
 );
 
 
+router.get('/doge-pay', ensureAuthenticated, (req, res) =>
+  res.render('doge', {
+    user: req.user
+  })
+);
+
+
 router.get('/ripple-pay', ensureAuthenticated, (req, res) =>
   res.render('ripplepay', {
     user: req.user

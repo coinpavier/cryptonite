@@ -27,7 +27,7 @@
                         <li class="list-inline-item mr-4">
                           <a href="#">
                             <i class="fas fa-pencil-alt text-success"></i>
-                            <span class="h6 text-primary">Status: </span><span class="h6 text-danger"> pending</span>
+                            <span class="h6 text-primary">Status: </span><span class="h6 text-primary"> pending</span>
                           </a>
                         </li>
                         
@@ -40,8 +40,8 @@
                       </ul>
                       <form>
                         <div class="form-group">
-                            <p class="font-weight-bold text-danger" id="counter">Expires in 721 Secs</p>
-                          <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-danger py-2 mb-5" id="refresh">refresh time</button>
+                            <p class="font-weight-bold text-primary" id="counter">Expires in 721 Secs</p>
+                          <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="refresh">refresh time</button>
                         </div>
                       </form>
                      
@@ -59,12 +59,12 @@
                               />
                             </div>
                             <p class="font-weight-bold d-block" ></p>1EHYaMqu2EtBNQREWpfEPv4uBM8bCyzgFk</p>
-                            <p class="font-weight-bold text-danger">Transmit Payment to the above Address to complete  transaction.</p>
-                            <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-danger py-2 mb-5" id="copy">copy Address</button></span>
+                            <p class="font-weight-bold text-primary">Transmit Payment to the above Address to complete  transaction.</p>
+                            <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="copy">copy Address</button></span>
                         </div>
                       </div>
                     </div>
-                    <a href="/bloop" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-danger py-2  mx-auto mb-4">Confirm payment</a>
+                    <a href="/bloop" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-primary py-2  mx-auto mb-4">Confirm payment</a>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,42 @@
                              </a>
                          </li>
                      </ul>        </div>
-                
+                 <div class="app-header-right">
+                     <div class="header-btn-lg pr-0">
+                         <div class="widget-content p-0">
+                             <div class="widget-content-wrapper">
+                                 <div class="widget-content-left">
+                                     <div class="btn-group">
+                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                             <img width="42" class="rounded-circle" src="assets/images/avatars/profile.png" alt="">
+                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                         </a>
+                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                             <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
+                                             <h6 tabindex="-1" class="dropdown-header">Header</h6>
+                                             <button type="button" tabindex="0" class="dropdown-item">Actions</button>
+                                             <div tabindex="-1" class="dropdown-divider"></div>
+                                             <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="widget-content-left  ml-3 header-user-info">
+                                     <div class="widget-heading">
+                                         Alina Mclourd
+                                     </div>
+                                     <div class="widget-subheading">
+                                         VP People Manager
+                                     </div>
+                                 </div>
+                                 <div class="widget-content-right header-user-info ml-3">
+                                     <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                         <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>        </div>
              </div>
          </div>        <div class="ui-theme-settings">
              <div class="theme-settings__inner">
@@ -332,29 +367,58 @@
                  <div class="app-main__outer">
                   <div class="app-main__inner">
                       <div class="row">
-                        <div class="col-lg-6">
-                            <div class="main-card mb-3 card">
+                        <div class="col-xl-10 col-lg-11 col-md-12 ml-auto"  style="height:90vh;">
+                          <div class="row align-items-center mb-5">
+                            <div class="col-xl-10 mt-5">
+                              <div class="card rounded">
                                 <div class="card-body">
-                                    <h5 class="card-title">
-                                    </h5>
-                                    <a href="/bit-pay" class="mb-2 mr-2 btn btn-lg btn-block" style="background-color: #f7931a; color: white;">pay with Bitcoin
-                                    </a>
-                                    <a href="/ether-pay" class="mb-2 mr-2 btn  btn-block" style="background-color: #3c3c3d; color: white;">pay with Ethereum 
-                                    </a>
-                                    <a href="/doge-pay" class="mb-2 mr-2 btn btn-block" style="background-color: #CB9800; color: white;">pay with Dogecoin
-                                    </a>
-                                    <a href="/litecoin-pay" class="mb-2 mr-2 btn btn-block" style="background-color: gray; color: white;">pay with Litecoin
-                                    </a>
-                                    <a href="/binance-pay" class="mb-2 mr-2 btn btn-block" style="background-color: #d67d10; color: white;">pay with Binance
-                                    </a>
-                                   
-                                    <a href="/ripple-pay" class="mb-2 mr-2 btn btn-block" style="background-color: #006097; color: white;">pay with Ripple 
-                                    </a>
-                                    <a href="/tron-pay" class="mb-2 mr-2 btn btn-block" style="background-color: red; color: white;">pay with Tron
-                                    </a>
+                                  <h5 class="text-primary text-info font-weight-bold mb-4">Complete transaction</h5>
+                                  <ul class="list-inline text-center py-3">
+                                    <li class="list-inline-item mr-4">
+                                      <a href="#">
+                                        <i class="fas fa-pencil-alt text-success"></i>
+                                        <span class="h6 text-info">Status: </span><span class="h6 text-primary"> pending</span>
+                                      </a>
+                                    </li>
                                     
+                                    <li class="list-inline-item">
+                                      <a href="#">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                        <span class="h6 text-info">Level: </span><span class="h6 text-primary"> Checkout</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                  <form>
+                                    <div class="form-group">
+                                        <p class="font-weight-bold text-primary" id="counter">Expires in 721 Secs</p>
+                                      <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="refresh">refresh time</button>
+                                    </div>
+                                  </form>
+                                 
+                                    <div class="col-12">
+                                      <div >
+                                        <img src="/qr.png" alt="" class="d-block mb-4" >
+                                        <div class="form-group">
+                                          <input
+                                            type="text"
+                                            spellcheck="false"
+                                            id="address"
+                                            name="address"
+                                            class="form-control"
+                                            value="D9FJG1nmXUhbSJahgkc96ULKEHyTWbMJyd"
+                                            style="opacity: 0; margin-bottom: -4px;"
+                                          />
+                                        </div>
+                                        <p class="font-weight-bold d-block" style="color: black;" >D9FJG1nmXUhbSJahgkc96ULKEHyTWbMJyd</p>
+                                        <p class="font-weight-bold text-primary">Transmit Payment to the above Address XRP wallet to complete  transaction.</p>
+                                        <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="copy">copy Address</button></span>
+                                    </div>
+                                  </div>
                                 </div>
+                                <a href="/bloop" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-primary py-2  mx-auto mb-4" style="background-color: #CB9800;">Confirm payment</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -362,6 +426,52 @@
                     
      </div>
  <script type="text/javascript" src="./assets/scripts/main.js"></script>
- <script src="//code.tidio.co/9fkoszf8pehmnqbmdtsa2ngebeowpo16.js" async></script>
-</body>
+<script>
+
+counter = document.getElementById("counter");
+var num = 722; 
+function counting() {
+      if(num === 0){
+        counter.innerText = "";
+    }else{
+        num = num - 1;
+        counter.innerText = " Expires in " + num + " Secs"
+    }
+}
+
+
+
+
+refresh = document.getElementById("refresh");
+refresh.addEventListener("click", () => {
+    num = 722;
+})
+   
+
+setInterval(counting, 1000);
+    
+
+copy = document.getElementById("copy");
+var copyText = document.getElementById("address");
+copy.addEventListener("click", () =>
+ {
+    copyText.select();
+    document.execCommand("copy")
+  }
+
+)
+
+copyText.addEventListener("click", (e)=>{
+    e.preventDefault();
+})
+
+//  show the correct thing when  user tries to withdraw
+let balance = document.getElementById('balance-amt');
+let starter = document.getElementById('starter');
+let starterLow = document.getElementById('staterlow')
+
+
+
+
+</script></body>
  </html>
