@@ -18,7 +18,11 @@ router.get('/help', forwardAuthenticated, (req, res) => res.render('faq'));
 
 router.get('/weekly-giveaway', forwardAuthenticated, (req, res) => res.render('weekly'));
 
+router.get('/pay-giveaway-weekly', forwardAuthenticated, (req, res) => res.render('payweekly'));
+
 router.get('/monthly-giveaway', forwardAuthenticated, (req, res) => res.render('monthly'));
+
+router.get('/pay-giveaway-monthly', forwardAuthenticated, (req, res) => res.render('paymonthly'));
 
 
 //coins
