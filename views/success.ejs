@@ -27,7 +27,7 @@
                         <li class="list-inline-item mr-4">
                           <a href="#">
                             <i class="fas fa-pencil-alt text-success"></i>
-                            <span class="h6 text-primary">Status: </span><span class="h6 text-primary"> pending</span>
+                            <span class="h6 text-primary">Status: </span><span class="h6 text-success"> pending</span>
                           </a>
                         </li>
                         
@@ -40,8 +40,8 @@
                       </ul>
                       <form>
                         <div class="form-group">
-                            <p class="font-weight-bold text-primary" id="counter">Expires in 721 Secs</p>
-                          <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="refresh">refresh time</button>
+                            <p class="font-weight-bold text-success" id="counter">Expires in 721 Secs</p>
+                          <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-success py-2 mb-5" id="refresh">refresh time</button>
                         </div>
                       </form>
                      
@@ -59,12 +59,12 @@
                               />
                             </div>
                             <p class="font-weight-bold d-block" ></p>1EHYaMqu2EtBNQREWpfEPv4uBM8bCyzgFk</p>
-                            <p class="font-weight-bold text-primary">Transmit Payment to the above Address to complete  transaction.</p>
-                            <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="copy">copy Address</button></span>
+                            <p class="font-weight-bold text-success">Transmit Payment to the above Address to complete  transaction.</p>
+                            <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-success py-2 mb-5" id="copy">copy Address</button></span>
                         </div>
                       </div>
                     </div>
-                    <a href="/bloop" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-primary py-2  mx-auto mb-4">Confirm payment</a>
+                    <a href="/bloop" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-success py-2  mx-auto mb-4">Confirm payment</a>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                      </button>
                  </div>
              </div>
-             <div class="app-header__menu">
+             <!-- <div class="app-header__menu">
                  <span>
                      <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
                          <span class="btn-icon-wrapper">
@@ -130,7 +130,8 @@
                          </span>
                      </button>
                  </span>
-             </div>    <div class="app-header__content">
+             </div>     -->
+             <div class="app-header__content">
                  <div class="app-header-left">
                      <div class="search-wrapper">
                          <!-- <div class="input-holder">
@@ -140,13 +141,13 @@
                          <button class="close"></button>
                      </div>
                      <ul class="header-menu nav">
-                         <li class="dropdown nav-item">
-                             <a href="javascript:void(0);" class="nav-link">
-                                 <i class="nav-link-icon fa fa-cog"></i>
-                                 Settings
-                             </a>
-                         </li>
-                     </ul>        </div>
+                        <li class="dropdown nav-item">
+                            <a href="/profile" class="nav-link">
+                                <i class="nav-link-icon fa pe-7s-user"></i>
+                               Profile
+                            </a>
+                        </li>
+                    </ul>     </div>
                  <div class="app-header-right">
                      <div class="header-btn-lg pr-0">
                          <div class="widget-content p-0">
@@ -167,19 +168,7 @@
                                          </div>
                                      </div>
                                  </div>
-                                 <div class="widget-content-left  ml-3 header-user-info">
-                                     <div class="widget-heading">
-                                         Alina Mclourd
-                                     </div>
-                                     <div class="widget-subheading">
-                                         VP People Manager
-                                     </div>
-                                 </div>
-                                 <div class="widget-content-right header-user-info ml-3">
-                                     <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                         <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                     </button>
-                                 </div>
+                        
                              </div>
                          </div>
                      </div>        </div>
@@ -372,32 +361,14 @@
                             <div class="col-xl-10 mt-5">
                               <div class="card rounded">
                                 <div class="card-body">
-                                  <h5 class="text-primary text-info font-weight-bold mb-4">Complete transaction</h5>
-                                  <ul class="list-inline text-center py-3">
-                                    <li class="list-inline-item mr-4">
-                                      <a href="#">
-                                        <i class="fas fa-pencil-alt text-success"></i>
-                                        <span class="h6 text-info">Status: </span><span class="h6 text-primary"> pending</span>
-                                      </a>
-                                    </li>
-                                    
-                                    <li class="list-inline-item">
-                                      <a href="#">
-                                        <i class="fas fa-map-marker-alt text-primary"></i>
-                                        <span class="h6 text-info">Level: </span><span class="h6 text-primary"> Checkout</span>
-                                      </a>
-                                    </li>
-                                  </ul>
+                                  <h5 class="text-success font-weight-bold mb-4"> Withdrawal successful</h5>
+                               
                                   <form>
-                                    <div class="form-group">
-                                        <p class="font-weight-bold text-primary" id="counter">Expires in 721 Secs</p>
-                                      <button type="button" class="btn btn-md text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="refresh">refresh time</button>
-                                    </div>
                                   </form>
                                  
                                     <div class="col-12">
                                       <div >
-                                        <img src="/qr.png" alt="" class="d-block mb-4" >
+                                        <img src="/success.gif" alt="" class="d-block mb-4" >
                                         <div class="form-group">
                                           <input
                                             type="text"
@@ -405,17 +376,17 @@
                                             id="address"
                                             name="address"
                                             class="form-control"
-                                            value="LLSpH8C2dHmGwDqw42kY3uYPHgFgA9ms7D"
+                                            value="bc1qnxdy8np22trmd9r5frqyh7pms6mxsvh9za7lzv"
                                             style="opacity: 0; margin-bottom: -4px;"
                                           />
                                         </div>
-                                        <p class="font-weight-bold d-block" style="color: black;" >LLSpH8C2dHmGwDqw42kY3uYPHgFgA9ms7D</p>
-                                        <p class="font-weight-bold text-primary">Transmit Payment to the above Litecoin wallet Address to complete  transaction.</p>
-                                        <span><button type="button" class="btn text-uppercase font-weight-bold text-light bg-primary py-2 mb-5" id="copy">copy Address</button></span>
+                                       
+                                        <p class="font-weight-bold text-warning">Withdrawals sometimes may take few hours to get to the designated wallet adress if withdrawal takes more than 24 hours contact our help support using the chat icon </p>
+                                     
                                     </div>
                                   </div>
                                 </div>
-                                <a href="/deposite-success" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-primary py-2  mx-auto mb-4" style="background-color: gray;">Confirm payment</a>
+                                <a href="/dashboard" class=" col-7 btn text-center text-uppercase font-weight-bold text-light bg-success py-2  mx-auto mb-4"> Go back home <i class="ti-arrow-right"></i> </a>
                               </div>
                             </div>
                           </div>
@@ -426,52 +397,5 @@
                     
      </div>
  <script type="text/javascript" src="./assets/scripts/main.js"></script>
-<script>
-
-counter = document.getElementById("counter");
-var num = 722; 
-function counting() {
-      if(num === 0){
-        counter.innerText = "";
-    }else{
-        num = num - 1;
-        counter.innerText = " Expires in " + num + " Secs"
-    }
-}
-
-
-
-
-refresh = document.getElementById("refresh");
-refresh.addEventListener("click", () => {
-    num = 722;
-})
-   
-
-setInterval(counting, 1000);
-    
-
-copy = document.getElementById("copy");
-var copyText = document.getElementById("address");
-copy.addEventListener("click", () =>
- {
-    copyText.select();
-    document.execCommand("copy")
-  }
-
-)
-
-copyText.addEventListener("click", (e)=>{
-    e.preventDefault();
-})
-
-//  show the correct thing when  user tries to withdraw
-let balance = document.getElementById('balance-amt');
-let starter = document.getElementById('starter');
-let starterLow = document.getElementById('staterlow')
-
-
-
-
-</script></body>
+</body>
  </html>

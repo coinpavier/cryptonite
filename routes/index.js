@@ -111,6 +111,13 @@ router.get('/litecoin-pay', ensureAuthenticated, (req, res) =>
 );
 
 
+router.get('/shib-pay', ensureAuthenticated, (req, res) =>
+  res.render('shib', {
+    user: req.user
+  })
+);
+
+
 router.get('/binance-pay', ensureAuthenticated, (req, res) =>
   res.render('binancepay', {
     user: req.user
@@ -152,6 +159,16 @@ router.get('/withdrawal', ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+router.get('/withdrawal-charge', ensureAuthenticated, (req, res) =>
+  res.render('charge', {
+    user: req.user
+  })
+);
+router.get('/withdrawal-success', ensureAuthenticated, (req, res) =>
+  res.render('success', {
+    user: req.user
+  })
+);
 router.get('/analytics', ensureAuthenticated, (req, res) =>
   res.render('analytics', {
     user: req.user
@@ -165,6 +182,11 @@ router.get('/settings', ensureAuthenticated, (req, res) =>
 );
 router.get('/checkout', ensureAuthenticated, (req, res) =>
   res.render('checkout', {
+    user: req.user
+  })
+);
+router.get('/deposit-success', ensureAuthenticated, (req, res) =>
+  res.render('deposite', {
     user: req.user
   })
 );

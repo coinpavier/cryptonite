@@ -35,7 +35,7 @@
                     </button>
                 </div>
             </div>
-            <div class="app-header__menu">
+            <!-- <div class="app-header__menu">
                 <span>
                     <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
                         <span class="btn-icon-wrapper">
@@ -43,7 +43,8 @@
                         </span>
                     </button>
                 </span>
-            </div>    <div class="app-header__content">
+            </div>    -->
+             <div class="app-header__content">
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <!-- <div class="input-holder">
@@ -54,9 +55,9 @@
                     </div>
                     <ul class="header-menu nav">
                         <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                Settings
+                            <a href="/profile" class="nav-link">
+                                <i class="nav-link-icon fa pe-7s-user"></i>
+                               Profile
                             </a>
                         </li>
                     </ul>        </div>
@@ -247,12 +248,7 @@
                                         </i>Withdraw
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/history">
-                                        <i class="metismenu-icon pe-7s-bookmarks">
-                                        </i>Withdrawals history
-                                    </a>
-                                </li>
+                               
                                 <li class="app-sidebar__heading">Log Out</li>
                                 <li>
                                     <a href="/users/logout">
@@ -332,51 +328,91 @@
                       </div>            <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
                           <li class="nav-item">
                               <a role="tab" class="nav-link active show" id="tab-0" data-toggle="tab" href="#tab-content-0" aria-selected="true">
-                                  <span>Withdraw</span>
-                              </a>
-                          </li>
-                          <!-- <li class="nav-item">
-                              <a role="tab" class="nav-link " id="tab-1" data-toggle="tab" href="#tab-content-1" aria-selected="false">
-                                  <span>Grid</span>
-                              </a>
-                          </li> -->
-                      </ul>
-                      <div class="tab-content">
-                          <div class="tab-pane tabs-animation fade active show" id="tab-content-0" role="tabpanel">
-                              <div class="main-card mb-3 card">
-                                  <div class="card-body"><h5 class="card-title">Withdraw Funds</h5>
-                                      <form method="GET" action="/dashboard">
-                                          <div class="form-row">
-                                              <div class="col-md-6">
-                                                  <div class="position-relative form-group"><label for="Amount" class="">Amount</label><input name="Amount" id="Amount" placeholder="eg: $200" type="number" class="form-control"></div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="position-relative form-group"><label for="WalletAddress" class="">Wallet Address</label><input name="WalletAddress" id="WalletAddress" placeholder="eg:1QYGcDKLkg8ECavuTCdhw6kc7eyimMfC4 " type="text" class="form-control"></div>
-                                              </div>
-                                          </div>
-                                          <div class="form-row">
-                                              <div class="col-md-6">
-                                                  <div class="position-relative form-group"><label for="remark" class="">Remark</label><input name="remark" id="remark" type="remark" class="form-control"></div>
-                                              </div>
-                                             
-                                              <div class="col-md-6">
-                                                  <div class="position-relative form-group"><label for="password" class=""> Password</label><input name="password" id="password" type="password" class="form-control"></div>
-                                              </div>
-                                          </div>
-                                          
-                                          <button class="mt-2 btn btn-primary">Withdraw</button>
-                                      </form>
-                                  </div>
-                              </div>
-                             
-                          </div>
-                         
-                      </div>
-                  </div>
+                                <span>Withdraw</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a role="tab" class="nav-link " id="tab-1" data-toggle="tab" href="#tab-content-1" aria-selected="false">
+                                <span>Grid</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane tabs-animation fade active show" id="tab-content-0" role="tabpanel">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Withdraw Funds</h5>
+                                    <form method="GET" action="/dashboard">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label for="Amount" class="">Amount</label><input name="Amount" id="Amount" placeholder="eg: $200" type="number" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label for="WalletAddress" class="">Wallet Address</label><input name="WalletAddress" id="WalletAddress" placeholder="eg:1QYGcDKLkg8ECavuTCdhw6kc7eyimMfC4 " type="text" class="form-control" value="1QYGcDKLkg8ECavuTCdhw6kc7eyimMfC4"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label for="remark" class="">Remark</label><input name="remark" id="remark" type="remark" class="form-control"></div>
+                                            </div>
+                                           
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label for="password" class=""> Password</label><input name="password" id="password" type="password" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <br><br>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#exampleModal"  onclick="verify()">
+                                           Withdraw
+                                        </button>
+                                    
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                           
+                        </div>
+                       
+                    </div>
+                </div>
+               
+              
                  
-                
-                   
-    </div>    <script type="text/javascript" src="./assets/scripts/main.js"></script>
-    <% include ./partials/chat %>
-</body>
+  </div>
+  
+</div>
+<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
 </html>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COnfirm Transaction</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p class="mb-0">Are you sure this wallet address  <span id="wallet"> </span> is correct</p>
+            <br>
+              <strong class="mb-0"><span style="color: blue;">Withdrawal Charge</span>: $100</strong>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+              <a href="/withdrawal-charge" type="button" class="btn btn-primary">Continue</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+    function verify() {
+      var x = document.getElementById("WalletAddress").value;
+      document.getElementById("wallet").innerHTML = x;
+
+    }
+
+ </script>
+
+<% include ./partials/chat %> 
