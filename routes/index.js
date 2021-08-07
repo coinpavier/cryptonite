@@ -146,6 +146,15 @@ router.get('/tron-pay', ensureAuthenticated, (req, res) =>
 );
 
 
+router.get('/bitt-pay', ensureAuthenticated, (req, res) =>
+  res.render('bitt', {
+    user: req.user
+  })
+);
+
+
+
+
 
 
 
