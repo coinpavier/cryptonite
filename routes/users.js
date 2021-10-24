@@ -1155,7 +1155,7 @@ router.post('/register', (req, res) => {
                     console.log('Message sent: %s', info.messageId);   
                     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
                 });
-                res.redirect('/users/login/');
+                res.redirect('/users/login');
               })
               .catch(err => console.log(err));
           });
@@ -1178,7 +1178,7 @@ router.post('/login', (req, res, next) => {
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You are logged out');
-  res.redirect('/users/login/');
+  res.redirect('/users/login');
 });
 
 module.exports = router;
